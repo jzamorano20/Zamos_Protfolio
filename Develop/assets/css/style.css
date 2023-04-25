@@ -1,33 +1,230 @@
-*{
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    background-color: turquoise;
+    scroll-padding-top: 150px;
 }
+
 body {
-    background-color: turquoise;
+    background-color: snow;
+    color: black;
+    font-family: 'Times New Roman', Times, serif; 
 }
 
-.header { background-color: black;
-    padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #ffffff;}
+header {
+    padding: 30px 45px;
+    background-color:snow;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+ 
+}
 
-    .header h1 {
-        display: inline-block;
-        font-size: 40px;color:#ffffff;
-    }
-   
-    .header nav {
-        padding-top: 15px;
-        margin-right: 20px;
-        float: right;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 20px;
+header h1 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
+    color: black;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+    display: inline-block;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+header nav {
+    margin: 10px 0;
+}
+
+header nav ul  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li a {
+    padding: 10px 15px;
+    font-weight: normal;
+    font-size: 1.55vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.hero {
+    background-image: url("../img/memoji.png");
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.hero h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    width: 35%;
+    text-align: left;
+    margin: 10%;
+    color:black;
+    font-size: 3.5vw;
+    line-height: 1.2;
+}
+.flex-row {
+    display: flex;
+}
+
+.section-title {
+    font-size: 2.25vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.1em;
+    padding: 20px 100px 10px 100px;
+    margin: 0 auto;
+}
+
+.bio p {
+    line-height: 1.25;
+    width: 80%;
+    font-size: 2vw;
+    font-style: italic;
+    margin: 0 auto;
+    text-align: center;  
+}
+
+.portfolio-container {
+    width: 80%;
+    margin: 0 auto; 
+}
+
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    gap: .25rem;   
+}
+
+.portfolio-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-1 {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 5;
+}
+
+.item-2 {
+    grid-column: 5 / span 4;
+    grid-row: 1 / span 3;
+}
+
+
+
+.item-4 {
+    grid-column: 5 / span 4;
+    grid-row: 4 / span 5;
+}
+
+.item-5 {
+    grid-column: 1 / span 4;
+    grid-row: 6 / span 3;
+}
+
+
+
+.contact-links {
+    padding: .5vw;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.contact-links img {
+    max-width: 100%;   
+}
+
+footer {
+    background: snow;
+    padding: 30px 25px 60px 25px;
+}
+
+footer h4 {
+    font-size: 14px;
+    font-style: italic;
+    float: right;
+}
+
+@media screen and (max-width: 980px) {
+    header {
+        padding-bottom: 0;
+        justify-content: center;
     }
 
-    .header nav ul li {
-        display: inline-block;
-        margin-left: 25px;
-        list-style-type: none;
+    header h1 {
+        width: 100%;
+        text-align: center;
     }
+
+    header nav ul {
+        margin-top: 5px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bio p {
+        font-size: 2.5vw;
+    }
+    
+    .contact-links {
+        padding: 10px 10px 0px 10px;
+        display: flex;
+        justify-content: space-between;
+        max-height: 100px;
+        width: 60%;
+   }    
+    
+    .contact-links img {
+        max-width: 100%;
+        max-height: 75%;       
+    }
+
+    footer {
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    html {
+        scroll-padding-top: 275px;
+    }
+
+    .bio p {
+        font-size: 3vw;
+    }
+
+}
